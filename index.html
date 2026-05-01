@@ -37,10 +37,12 @@
             </div>
         </div>
 
-        <div class="scroll-down" id="scrollDown">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
-            </svg>
+        <div class="scroll-down-container">
+            <div class="scroll-down" id="scrollDownProducts" data-target="productsSection">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+                </svg>
+            </div>
         </div>
     </section>
 
@@ -68,7 +70,7 @@
 
             <div class="product-card">
                 <a href="recruitment/recruitment-none.html" style="text-decoration: none; color: inherit;">
-                    <h3>针对大模型的新型攻击技术调研</h3>
+                    <h3>大模型新型攻击技术调研</h3>
                     <p>聚焦AI 大模型落地衍生的新型安全风险，以攻击技术调研、行为捕获、特征分析、监测方案搭建为核心，系统性研究大模型场景下的网络攻击变种与对抗技术。</p>
                     <div class="product-details">
                         <h4>核心内容</h4>
@@ -103,6 +105,13 @@
                         <div class="progress-bar" style="width: 100%">已完成</div>
                     </div>
                 </a>
+            </div>
+        </div>
+        <div class="scroll-down-container">
+            <div class="scroll-down" id="scrollDownSocial" data-target="socialMediaSection">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+                </svg>
             </div>
         </div>
     </section>
@@ -146,72 +155,54 @@
 
     <div class="popup" id="popup">
         <div class="popup-content">
-            <div class="community-details-popup">
-                <div class="popup-header">
-                    <div class="popup-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                    </div>
-                    <h2>加入酷X众创社区</h2>
-                    <p class="popup-subtitle">成为我们的一员，共同创造价值</p>
+            <div class="popup-header">
+                <div class="popup-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
                 </div>
-                
-                <div class="section">
-                    <div class="email-info">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        <span>发送邮件至：</span>
-                        <a href="mailto:coolxer@163.com" class="email-link">coolxer@163.com</a>
-                    </div>
-                    
-                    <div class="template-card">
-                        <h3>邮件模板</h3>
-                        <div class="template-item">
-                            <span class="template-label">主题：</span>
-                            <p>社区加入申请</P>
-                        </div>
-                        <div class="template-item">
-                            <span class="template-label">正文：</span>
-                        </div>
-                        <ul class="requirement-list">
-                            <p>
-                                您的姓名
-                            </p>
-                            <p>
-                                联系方式
-                            </p>
-                            <p>
-                                专业技能/兴趣方向
-                            </p>
-                            <p>
-                                为什么希望加入社区
-                            </p>
-                            <p>
-                                您能为社区贡献什么
-                            </p>
-                        </ul>
-                    </div>
-                    
-                    <div class="note-box">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                        <span>我们会在收到邮件后尽快与您联系，感谢您的关注！</span>
-                    </div>
+                <h2>加入酷X众创社区</h2>
+                <p>成为我们的一员，共同创造价值</p>
+            </div>
+            <div class="popup-body">
+                <div class="email-box">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    <span>发送邮件至</span>
+                    <a href="mailto:coolxer@163.com">coolxer@163.com</a>
                 </div>
-
-                <div class="popup-buttons">
-                    <button class="popup-btn cancel" id="cancelBtn">
-                        取消
-                    </button>
-                    <button class="popup-btn confirm" id="confirmBtn">
-                        发送邮件
-                    </button>
+                <div class="template-box">
+                    <div class="template-title">邮件模板</div>
+                    <div class="template-row">
+                        <span class="label">主题</span>
+                        <span class="value">社区加入申请</span>
+                    </div>
+                    <div class="template-row">
+                        <span class="label">正文</span>
+                    </div>
+                    <ul class="template-list">
+                        <li>您的姓名</li>
+                        <li>联系方式</li>
+                        <li>专业技能/兴趣方向</li>
+                        <li>为什么希望加入社区</li>
+                        <li>您能为社区贡献什么</li>
+                    </ul>
                 </div>
+                <div class="note">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                    <span>我们会在收到邮件后尽快与您联系</span>
+                </div>
+            </div>
+            <div class="popup-footer">
+                <button class="btn-cancel" id="cancelBtn">取消</button>
+                <a href="mailto:coolxer@163.com" class="btn-confirm">发送邮件</a>
             </div>
         </div>
     </div>
@@ -219,13 +210,52 @@
     <script src="js/index.js"></script>
 
     <footer>
-        <div>
-            <p>
-                © 2026 酷X众创社区. 保留所有权利.
-                <a href="community/community-about.html">关于社区</a> |
-                <a href="community/community-details.html">社区章程</a> |
+        <div class="footer-content">
+            <div class="footer-section footer-brand">
+                <div class="brand-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    <span class="brand-name">酷X众创社区</span>
+                </div>
+                <p class="brand-description">聚集一群很酷的人，做很酷的事</p>
+            </div>
+
+            <div class="footer-section footer-links">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">开源项目</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section footer-contact">
+                <h4>联系我们</h4>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                    <a href="mailto:coolxer@163.com">coolxer@163.com</a>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>010-12345678</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                <p>© 2026 酷X众创社区. 保留所有权利.</p>
+            </div>
+            <div class="footer-legal">
                 <a href="#">京ICP备12345678号</a>
-            </p>
+                <a href="community/community-about.html">关于社区</a>
+                <a href="community/community-details.html">社区章程</a>
+            </div>
         </div>
     </footer>
 </body>

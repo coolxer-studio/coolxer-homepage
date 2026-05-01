@@ -30,10 +30,6 @@ function hidePopup() {
     document.getElementById('popup').classList.remove('show');
 }
 
-function sendEmail() {
-    window.location.href = "mailto:coolxer@163.com?subject=社区加入申请&body=您好，我希望加入您的社区。";
-}
-
 document.querySelector('.btn-enter').addEventListener('click', function () {
     this.innerHTML = '加载中...';
     this.style.background = 'linear-gradient(45deg, #2ed573, #1dd1a1)';
@@ -42,11 +38,6 @@ document.querySelector('.btn-enter').addEventListener('click', function () {
         this.style.background = 'linear-gradient(45deg, #ff6b6b, #e8cb97)';
         showPopup();
     }, 500);
-});
-
-document.getElementById('confirmBtn').addEventListener('click', function () {
-    hidePopup();
-    sendEmail();
 });
 
 document.getElementById('cancelBtn').addEventListener('click', function () {
@@ -59,17 +50,14 @@ document.addEventListener('mousemove', (e) => {
     document.querySelector('.community-intro').style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg) translateZ(50px)`;
 });
 
-let scrollStage = 0;
-const scrollSections = ['productsSection', 'socialMediaSection'];
-
-document.getElementById('scrollDown').addEventListener('click', () => {
-    if (scrollStage < scrollSections.length) {
-        document.getElementById(scrollSections[scrollStage]).scrollIntoView({ behavior: 'smooth' });
-        scrollStage++;
-    } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        scrollStage = 0;
-    }
+document.querySelectorAll('.scroll-down').forEach(button => {
+    button.addEventListener('click', () => {
+        const targetId = button.dataset.target;
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });
 
 let hasScrolled = false;
@@ -191,7 +179,16 @@ function initMembersCarousel() {
     document.querySelector('.carousel-control.next').addEventListener('click', nextSlide);
     document.querySelector('.carousel-control.prev').addEventListener('click', prevSlide);
 
-    setInterval(nextSlide, 3000);
+    let autoPlayInterval = setInterval(nextSlide, 3000);
+    const carouselContainer = document.querySelector('.carousel-container');
+
+    carouselContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+    });
+
+    carouselContainer.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(nextSlide, 3000);
+    });
 
     updateCarousel();
 }
