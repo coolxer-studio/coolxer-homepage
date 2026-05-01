@@ -1,0 +1,18 @@
+# 编辑器和IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# 临时文件
+*.tmp
+*.temp
+.cache/
+
+# AI 编码 IDE
+.trae/
+.lingm/
+.claude/
+.cursor/
