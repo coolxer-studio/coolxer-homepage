@@ -21,6 +21,7 @@
 ├── .gitignore                 # Git忽略文件配置
 ├── deploy_website.sh          # 自动部署脚本
 ├── nginx_site.conf            # Nginx站点配置
+├── upload_file.sh             # 上传文件到Nginx服务器脚本
 ├── common/                    # 公共组件
 │   ├── 404.html               # 404错误页面
 │   ├── 50x.html               # 500服务器错误页面

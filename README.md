@@ -32,7 +32,7 @@ python -m http.server 8000
 
 ### 部署项目
 
-#### 自动部署（全新的Nginx环境）
+#### 全新的Nginx环境
 
 1.给脚本权限
 
@@ -54,12 +54,13 @@ chmod +x deploy_website.sh
 
 然后**输入服务器密码**，等待自动完成即可。
 
-#### 手动部署（适合在现有Nginx环境上修改）
+#### 已有的Nginx环境上更新
 
-手动拷贝项目内容到Nginx服务器目录下，例如：
+手动拷贝项目内容到Nginx服务器，例如：
 
 ```bash
-cp -r . /var/www/html/
+chmod +x ./upload_file.sh
+./upload_file.sh aliyun
 ```
 
 然后重启Nginx服务，使新配置生效。
@@ -78,6 +79,7 @@ nginx -s reload
 ├── .gitignore                 # Git忽略文件配置
 ├── deploy_website.sh          # 自动部署脚本
 ├── nginx_site.conf            # Nginx站点配置
+├── upload_file.sh             # 上传文件到Nginx服务器脚本
 ├── common/                    # 公共组件
 │   ├── 404.html               # 404错误页面
 │   ├── 50x.html               # 500服务器错误页面
