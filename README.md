@@ -139,21 +139,19 @@ nginx -s reload
 
 ### 成员信息更新
 
-1. 基于主分支拉取最新代码
+1. Fork最新代码
 2. 在 `member` 目录下创建个人主页文件（如 `member/member-profile-{主页id}.html`）
 3. 参考 `member/member-profile-example.html` 实现，更新头像、技能标签、贡献成就等信息
 4. 如需自定义样式或脚本，可在 `css`、`js`、`images` 目录下添加对应文件
-5. 提交更新到个人分支，并提交merge request到主分支
-6. 等待管理员审核通过后合并到主分支，触发 CI/CD 自动部署
+5. 提交PR到主分支，请求管理员审核,等待管理员审核通过后合并到主分支，触发 CI/CD 自动部署
 
 ### 招募活动更新
 
-1. 基于主分支拉取最新代码
+1. Fork最新代码
 2. 在 `recruitment` 目录下创建招募活动文件（如 `recruitment/recruitment-{活动id}.html`）
 3. 参考 `recruitment/recruitment-example.html` 实现，更新项目详情、角色招募、进度条展示等
 4. 如需自定义样式或脚本，可在对应目录下添加文件
-5. 提交更新到个人分支，并提交merge request到主分支
-6. 等待管理员审核通过后合并到主分支，触发 CI/CD 自动部署
+5. 提交PR到主分支，请求管理员审核,等待管理员审核通过后合并到主分支，触发 CI/CD 自动部署
 
 ***
 
