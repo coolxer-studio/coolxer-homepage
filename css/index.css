@@ -48,6 +48,18 @@ body {
     animation: float 3s ease-in-out infinite;
 }
 
+.community-logo {
+    display: block;
+    margin: 0 auto 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.community-logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 6px 12px rgba(96, 165, 250, 0.5));
+}
+
 .community-intro h1 {
     color: #b9e9f0;
     margin-bottom: 20px;
