@@ -85,8 +85,8 @@ function initMembersCarousel() {
     ];
 
     const members = [
+        { id: "wushaojie", name: "吴绍杰", role: "架构师", avatar: "吴" },
         { id: "example", name: "李明", role: "产品项目经理", avatar: "member/images/user1.png" },
-        { id: "none", name: "待加入", role: "UI设计师", avatar: "W" },
         { id: "none", name: "待加入", role: "创始人", avatar: "Z" },
         { id: "none", name: "待加入", role: "开发者", avatar: "L" },
         { id: "none", name: "待加入", role: "设计师", avatar: "L" },
