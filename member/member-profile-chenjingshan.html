@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>陈敬山 - 酷X众创社区</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-container {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            padding: 20px 10px;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 95%;
+            max-width: 1200px;
+            text-align: center;
+            margin-top: 60px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .profile-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 5px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .badge {
+            position: absolute;
+            top: -8px;
+            right: -35px;
+            color: white;
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            transition: transform 0.2s ease;
+            white-space: nowrap;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+        }
+
+        .badge:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-role {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .profile-details {
+            text-align: left;
+            margin-top: 30px;
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .detail-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .detail-label {
+            font-weight: 700;
+            color: #60a5fa;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            color: #e2e8f0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .achievements-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .achievements-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .achievements-list li:before {
+            content: "•";
+            color: #60a5fa;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60a5fa;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .social-link.github {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link.gitee {
+            background: rgba(249, 104, 84, 0.2);
+            color: #f96854;
+            border: 1px solid rgba(249, 104, 84, 0.3);
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(96, 165, 250, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(96, 165, 250, 0.6);
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 30px 20px;
+            }
+
+            .profile-avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+
+            .profile-name {
+                font-size: 2rem;
+            }
+
+            .floating-home-btn {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <img class="profile-avatar" src="images/chenjingshan.png" alt="陈敬山">
+        <h1 class="profile-name">
+            陈敬山
+            <span class="badge" title="实名认证">实名</span>
+        </h1>
+
+        <div class="profile-details">
+            <div class="detail-item">
+                <p class="profile-role">Java架构师 | 高级工程师</p>
+                <div class="skills-tags">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">Spring Cloud</span>
+                    <span class="skill-tag">Dubbo</span>
+                    <span class="skill-tag">Kafka</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Elasticsearch</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Flink</span>
+                    <span class="skill-tag">Spring AI</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/cipherzen" target="_blank" class="social-link github">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://gitee.com/cipherzen" target="_blank" class="social-link gitee">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.164 6.839 9.489.5.09.682-.218.682-.487 0-.236-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .268.18.579.688.481C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                        Gitee
+                    </a>
+                </div>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">简介</span>
+                <p class="detail-value">长期专注于高并发微服务架构与海量数据处理领域，支撑日均几十亿级数据的实时计算与存储。具备分布式系统设计与性能优化经验，擅长解决复杂技术问题，曾多次主导重大故障排查与系统优化，确保业务稳定运行。工作认真负责，曾临危受命，成功解决关键问题，保障重要项目顺利推进。</p>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">工作经历</span>
+                <ul class="achievements-list">
+                    <li><strong>某网络科技公司</strong> | Java架构师 - 主导公司广告投放监测与数据回传平台的系统重构与微服务化升级，设计并实现日均亿级曝光、点击、关键行为数据的实时接收与处理系统，支撑多平台监测链接的统一管理和数据自动回传。</li>
+                    <li><strong>某网络安全公司</strong> | Java高级工程师 - 主导设计并开发日均几十亿级数据的实时处理系统，通过网络流量采集、消息队列分级处理、分布式集群计算、冷热分层存储架构，延迟控制在秒级，支持业务实时告警，提升业务响应速度50%。</li>
+                    <li><strong>某科技公司</strong> | Java高级工程师 - 主导公司主要业务系统的微服务项目搭建，基于Spring Cloud Alibaba构建分布式微服务架构，服务可用性从99%提升至99.99%。</li>
+                    <li><strong>某科技公司</strong> | Java中级工程师（开发组长） - 带领7人团队完成核心业务模块的需求分析、数据建模与系统设计，设计并开发部门基础平台，为多条业务线提供通用业务支撑，减少重复开发工作量30%。</li>
+                </ul>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">核心项目</span>
+                <ul class="achievements-list">
+                    <li><strong>擎洲投放系统中台</strong> - 面向广告投放与数据资产管理的企业级平台，日均处理广告请求超亿次。基于Kafka构建异步消息处理管道，利用Flink实现投放效果指标的实时计算，基于Doris构建广告投放数据的实时数仓，支持多维度实时OLAP查询与报表生成。</li>
+                    <li><strong>资产测绘平台</strong> - 集边缘计算与大数据分析为一体的综合数据安全管理平台，实现数据安全风险感知、数据资产测绘、合规监测、数据溯源、数据泄露、聚类分析、违规告警、行为异常分析等功能。</li>
+                    <li><strong>数据采集后端系统</strong> - 用于采集windows客户端发送的数据，采用http通信，使用tlv编码格式传输，实现十万级并发请求以及亿级日志存储。</li>
+                </ul>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">专业技能</span>
+                <ul class="achievements-list">
+                    <li><strong>Java技术栈：</strong>熟练掌握Java SE基础知识，深入研究JVM原理，具备丰富的JVM线上调优经验</li>
+                    <li><strong>缓存技术：</strong>熟练掌握Redis核心数据结构及其使用场景，深入理解缓存高并发场景下的问题解决方案</li>
+                    <li><strong>数据库：</strong>熟练使用MySQL、SQLServer等关系型数据库，具备千万级数据查询索引优化经验</li>
+                    <li><strong>开源框架：</strong>深入掌握Spring Cloud及Spring Cloud Alibaba组件，包括注册中心、负载均衡器、客户端调用工具、服务注册配置中心、服务限流降级保护、网关</li>
+                    <li><strong>消息中间件：</strong>深入理解常用消息中间件Kafka，能够解决消息丢失、重复消费、消息积压、消息回溯等疑难问题</li>
+                    <li><strong>AI应用：</strong>研究SpringAI框架集成大模型应用，熟悉其中的prompt提示词、FunctionCall、检索增强生成(RAG)、Vector数据库</li>
+                </ul>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">贡献</span>
+                <ul class="achievements-list">
+                    <li>主导Kafka集群优化方案，通过动态分区再平衡算法实现生产消费速率自动适配，消除日均千万级积压</li>
+                    <li>通过数据分片方案将单索引数据量从TB级拆分至GB级，支撑实时监控业务场景，使分析响应时间从12秒缩短至3秒</li>
+                    <li>解决mysql千万级数据查询卡顿问题，通过优化索引和分库策略，查询性能提升60%</li>
+                    <li>针对JVM频繁Full GC问题，通过分析内存快照和调整GC策略，将系统停顿时间从秒级降至毫秒级</li>
+                    <li>通过引入Elasticsearch实现大数据量的查询性能低下问题，提升用户查询体验</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 酷X众创社区. 保留所有权利.</p>
+    </footer>
+
+    <a href="../index.html" class="floating-home-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+    </a>
+</body>
+
+</html>
