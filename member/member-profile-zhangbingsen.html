@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张炳森 - 酷X众创社区</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-container {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            padding: 20px 10px;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 95%;
+            max-width: 1200px;
+            text-align: center;
+            margin-top: 60px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .profile-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 5px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .badge {
+            position: absolute;
+            top: -8px;
+            right: -35px;
+            color: white;
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            transition: transform 0.2s ease;
+            white-space: nowrap;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+        }
+
+        .badge:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-role {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .profile-details {
+            text-align: left;
+            margin-top: 30px;
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .detail-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .detail-label {
+            font-weight: 700;
+            color: #60a5fa;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            color: #e2e8f0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .achievements-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .achievements-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .achievements-list li:before {
+            content: "•";
+            color: #60a5fa;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60a5fa;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .social-link.github {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link.gitee {
+            background: rgba(249, 104, 84, 0.2);
+            color: #f96854;
+            border: 1px solid rgba(249, 104, 84, 0.3);
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(96, 165, 250, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(96, 165, 250, 0.6);
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 30px 20px;
+            }
+
+            .profile-avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+
+            .profile-name {
+                font-size: 2rem;
+            }
+
+            .floating-home-btn {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <img class="profile-avatar" src="images/zhangbingsen.png" alt="张炳森">
+        <h1 class="profile-name">
+            张炳森
+            <span class="badge" title="实名认证">实名</span>
+        </h1>
+
+        <div class="profile-details">
+            <div class="detail-item">
+                <p class="profile-role">高级Java架构师 | 系统架构师</p>
+                <div class="skills-tags">
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">DDD领域驱动</span>
+                    <span class="skill-tag">微服务架构</span>
+                    <span class="skill-tag">Dubbo</span>
+                    <span class="skill-tag">SpringCloud</span>
+                    <span class="skill-tag">LiteFlow</span>
+                    <span class="skill-tag">Nacos</span>
+                    <span class="skill-tag">RocketMQ</span>
+                    <span class="skill-tag">OpenTelemetry</span>
+                    <span class="skill-tag">Docker/K8s</span>
+                    <span class="skill-tag">全链路压测</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/hexen16" target="_blank" class="social-link github">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://gitee.com/hexen16" target="_blank" class="social-link gitee">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.164 6.839 9.489.5.09.682-.218.682-.487 0-.236-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .268.18.579.688.481C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                        Gitee
+                    </a>
+                </div>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">简介</span>
+                <p class="detail-value">长期深耕分布式高并发系统架构与AI工程化领域，精通DDD领域驱动设计与微服务架构。曾主导多个亿级流量系统架构升级，支撑日均4亿单流水、QPS100k+超大规模系统稳定运行，大促期间实现0故障。深耕AI引擎服务化与插件化治理，具备全链路稳定性保障能力。</p>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">工作经历</span>
+                <ul class="achievements-list">
+                    <li><strong>某科技公司</strong> | 高级系统架构师 - 主导智能批改平台整体架构升级，带领20人技术团队，支撑多款核心业务产品。采用DDD领域驱动设计重构整体架构，系统可用性达到99.99%，故障恢复时间缩短60%以上。</li>
+                    <li><strong>某科技公司</strong> | 系统架构师 - 主导广告投放系统重构与AI图片系统研发，采用分布式分片调度，优化大数据分片计算，支撑日均千万级素材同步，P99延迟200ms内。</li>
+                    <li><strong>某互联网公司</strong> | 高级开发工程师 - 负责大促系统稳定性管理，带领20人技术团队，支撑日均百万级订单结算业务，大促期间QPS峰值达10万+级别，建立全链路稳定性保障体系。</li>
+                </ul>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">核心项目</span>
+                <ul class="achievements-list">
+                    <li><strong>AI智能批改平台</strong> - 日均处理百万级批改请求，采用DDD领域驱动设计重构整体架构，实现AI引擎动态上架/下架，全链路P99延迟从2秒优化至200毫秒以内，系统吞吐量提升10倍。</li>
+                    <li><strong>千亿数据库专项治理</strong> - 主导千亿级MySQL数据库专项治理，完成多实例分库拆分与单表上亿数据平滑迁移，优化数据库算力，规范SQL语句、优化索引设计。</li>
+                    <li><strong>大促系统稳定性保障</strong> - 负责大促系统稳定性管理，建立应用架构梳理与链路分析方法论，制定容量评估标准，建立全链路压测流程和监控指标体系，保障大促期间0故障运行。</li>
+                </ul>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">专业技能</span>
+                <ul class="achievements-list">
+                    <li>AI工程与架构：AI引擎服务化、DDD领域驱动、微服务架构、自研RPC框架、服务网格、容灾容错</li>
+                    <li>大数据与高并发：全链路压测、容量评估、十万级QPS保障、千亿级MySQL治理、分库分表、RocketMQ/Kafka、Redis分布式缓存</li>
+                    <li>可观测与稳定性：OpenTelemetry、Prometheus/Grafana、全链路追踪、Metrics/Logs/Traces监控体系、MTTR优化、故障演练</li>
+                    <li>工程效能与工具链：SpringBoot/SpringCloudAlibaba、自研OpenTelemetry、CI/CD流水线、自动化测试、容器化部署</li>
+                </ul>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">贡献</span>
+                <ul class="achievements-list">
+                    <li>主导智能批改平台架构升级，支撑日均百万级批改请求，批改流程复用率提升60%</li>
+                    <li>担任大促系统稳定性负责人，带领20人技术团队，协调跨部门协作，保障大促期间0故障</li>
+                    <li>主导千亿级MySQL数据库治理，完成多实例分库拆分与单表上亿数据平滑迁移</li>
+                    <li>建立稳定性成熟度模型，推动建立API设计规范、灰度发布流程和全链路追踪体系</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 酷X众创社区. 保留所有权利.</p>
+    </footer>
+
+    <a href="../index.html" class="floating-home-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+    </a>
+</body>
+
+</html>
