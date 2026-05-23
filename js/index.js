@@ -85,17 +85,16 @@ function initMembersCarousel() {
     ];
 
     const members = [
-        { id: "wushaojie", name: "吴绍杰", role: "架构师", avatar: "吴" },
-        { id: "example", name: "李明", role: "产品项目经理", avatar: "member/images/user1.png" },
+        { id: "wushaojie", name: "吴绍杰", role: "架构师", avatar: "杰" },
+        { id: "xiaobai1894", name: "小白", role: "LLM应用架构师", avatar: "白" },
+        { id: "zhangbingsen", name: "张炳森", role: "系统架构师", avatar: "member/images/zhangbingsen.png" },
+        { id: "qualdex", name: "qualdex", role: "高级产品经理", avatar: "QU" },
+        { id: "chenjingshan", name: "陈敬山", role: "高级工程师", avatar: "member/images/chenjingshan.png" },
+        { id: "pinetec", name: "pinetec", role: "解决方案专家", avatar: "member/images/pinetec.jpg" },
+        { id: "vibepig", name: "VibePig", role: "安全研究员", avatar: "VP" },
         { id: "aqi", name: "阿七", role: "移动安全专家", avatar: "七" },
-        { id: "none", name: "待加入", role: "创始人", avatar: "Z" },
-        { id: "none", name: "待加入", role: "开发者", avatar: "L" },
-        { id: "none", name: "待加入", role: "设计师", avatar: "L" },
-        { id: "none", name: "待加入", role: "产品经理", avatar: "Z" },
-        { id: "none", name: "待加入", role: "市场专员", avatar: "Q" },
-        { id: "none", name: "待加入", role: "安全专家", avatar: "S" },
-        { id: "none", name: "待加入", role: "数据分析师", avatar: "Z" },
-        { id: "none", name: "待加入", role: "运维工程师", avatar: "W" }
+        { id: "example", name: "待位", role: "优秀的你", avatar: "member/images/user1.png" }
+
     ];
 
     const carousel = document.getElementById('membersCarousel');
