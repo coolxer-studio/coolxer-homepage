@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qualdex - 酷X众创社区</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-container {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            padding: 20px 10px;
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 95%;
+            max-width: 1200px;
+            text-align: center;
+            margin-top: 60px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .profile-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .profile-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            color: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+        }
+
+        .badge {
+            position: absolute;
+            top: -8px;
+            right: -35px;
+            color: white;
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            transition: transform 0.2s ease;
+            white-space: nowrap;
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+        }
+
+        .badge:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-role {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .profile-details {
+            text-align: left;
+            margin-top: 30px;
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .detail-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .detail-label {
+            font-weight: 700;
+            color: #60a5fa;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            color: #e2e8f0;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .achievements-list {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .achievements-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .achievements-list li:before {
+            content: "•";
+            color: #60a5fa;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: rgba(96, 165, 250, 0.2);
+            color: #60a5fa;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .social-link.github {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-link.gitee {
+            background: rgba(249, 104, 84, 0.2);
+            color: #f96854;
+            border: 1px solid rgba(249, 104, 84, 0.3);
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .floating-home-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #60a5fa, #3b82f6);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(96, 165, 250, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(96, 165, 250, 0.6);
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 30px 20px;
+            }
+
+            .profile-avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+
+            .profile-name {
+                font-size: 2rem;
+            }
+
+            .floating-home-btn {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="profile-container">
+        <div class="profile-avatar">QU</div>
+        <h1 class="profile-name">
+            qualdex
+            <span class="badge" title="匿名认证">匿名</span>
+        </h1>
+
+        <div class="profile-details">
+            <div class="detail-item">
+                <p class="profile-role">高级产品经理 | 项目负责人</p>
+                <div class="skills-tags">
+                    <span class="skill-tag">产品管理</span>
+                    <span class="skill-tag">项目管理</span>
+                    <span class="skill-tag">需求分析</span>
+                    <span class="skill-tag">用户体验</span>
+                    <span class="skill-tag">数据分析</span>
+                    <span class="skill-tag">敏捷开发</span>
+                    <span class="skill-tag">产品规划</span>
+                    <span class="skill-tag">市场调研</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/qualdex" target="_blank" class="social-link github">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://gitee.com/qualdex" target="_blank" class="social-link gitee">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.164 6.839 9.489.5.09.682-.218.682-.487 0-.236-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .268.18.579.688.481C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                        Gitee
+                    </a>
+                </div>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">简介</span>
+                <p class="detail-value">长期专注于互联网产品设计与项目管理领域，具备从0到1的产品孵化能力。擅长用户需求挖掘、产品规划与迭代优化，具备丰富的团队管理经验，曾带领多个产品团队成功交付项目。对用户体验和数据分析有深入理解，能够通过数据驱动产品决策。工作认真负责，注重细节，追求卓越。</p>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">工作经历</span>
+                <ul class="achievements-list">
+                    <li><strong>某科技公司</strong> | 高级产品经理 - 负责公司核心产品线的规划与管理，带领5人产品团队完成产品迭代与优化。通过用户调研和数据分析，持续优化产品体验，提升用户留存率30%。负责跨部门协调，确保产品按时高质量交付。</li>
+                    <li><strong>某互联网公司</strong> | 产品经理 - 负责移动端APP的产品设计与迭代，从0到1完成多个功能模块的开发。通过A/B测试和用户反馈，不断优化产品功能，提升用户满意度。参与产品运营策略制定，推动用户增长。</li>
+                    <li><strong>某创业公司</strong> | 产品经理 - 负责公司首款产品的从0到1孵化，完成市场调研、需求分析、产品设计等全流程工作。产品成功上线并获得市场认可，用户数突破10万。负责产品运营和用户增长，建立用户反馈机制。</li>
+                </ul>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">核心项目</span>
+                <ul class="achievements-list">
+                    <li><strong>企业级SaaS平台</strong> - 负责企业级SaaS平台的产品规划与设计，从0到1完成产品孵化。通过深入的用户调研和需求分析，设计出符合企业用户需求的产品功能。产品成功上线，签约企业客户50+，年营收突破500万。</li>
+                    <li><strong>移动端社交APP</strong> - 负责移动端社交APP的产品设计与迭代，优化用户体验和社交功能。通过数据分析和用户反馈，持续优化产品功能，提升用户活跃度和留存率。用户数突破100万，日活跃用户达到20万。</li>
+                    <li><strong>电商平台重构</strong> - 负责电商平台的产品重构工作，优化用户购物流程和体验。通过A/B测试和数据分析，不断优化产品功能，提升转化率。转化率提升40%，GMV增长60%。</li>
+                </ul>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">专业技能</span>
+                <ul class="achievements-list">
+                    <li><strong>产品规划：</strong>具备从0到1的产品孵化能力，擅长产品规划和路线图制定</li>
+                    <li><strong>需求分析：</strong>擅长用户需求挖掘和分析，能够将用户需求转化为产品功能</li>
+                    <li><strong>用户体验：</strong>对用户体验有深入理解，能够通过用户调研和数据分析优化产品体验</li>
+                    <li><strong>数据分析：</strong>具备数据分析能力，能够通过数据驱动产品决策</li>
+                    <li><strong>项目管理：</strong>具备项目管理能力，能够协调跨部门资源，确保产品按时交付</li>
+                </ul>
+            </div>
+
+            <div class="detail-item">
+                <span class="detail-label">贡献</span>
+                <ul class="achievements-list">
+                    <li>从0到1完成多个产品孵化，成功上线并获得市场认可</li>
+                    <li>通过数据分析和用户反馈，持续优化产品体验，提升用户留存率30%</li>
+                    <li>带领5人产品团队完成产品迭代与优化，提升团队效率</li>
+                    <li>负责跨部门协调，确保产品按时高质量交付</li>
+                    <li>参与产品运营策略制定，推动用户增长，用户数突破100万</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 酷X众创社区. 保留所有权利.</p>
+    </footer>
+
+    <a href="../index.html" class="floating-home-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+    </a>
+</body>
+
+</html>
