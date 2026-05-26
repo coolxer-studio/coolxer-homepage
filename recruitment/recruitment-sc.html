@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="端到端通信协议保护SDK - 酷X众创社区，提供完整的通信协议安全防护底座">
+    <title>端到端通信协议保护SDK - 酷X众创社区</title>
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/recruitment.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>端到端通信协议保护SDK</h1>
+            <p>一套完整的、端到端、标准化、可复用的通信协议安全防护底座</p>
+            <div class="social-links">
+                    <a href="https://github.com/coolxer-studio/secure-communication" target="_blank" class="social-link github">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://gitee.com/coolxer-studio/secure-communication" target="_blank" class="social-link gitee">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.164 6.839 9.489.5.09.682-.218.682-.487 0-.236-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .268.18.579.688.481C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                        Gitee
+                    </a>
+                </div>
+        </header>
+
+        <article class="project-detail-card">
+
+            <section class="section">
+                <h2>项目核心定位</h2>
+                <p>本产品不是单点加密工具，而是<strong>一套完整的、端到端、标准化、可复用的通信协议安全防护底座</strong>，通过SDK封装方式，低成本、零侵入解决现有通信协议裸奔、易破解、易攻击、防护不统一、维护成本高的行业痛点。</p>
+            </section>
+
+            <section class="section">
+                <h2>当前行业痛点</h2>
+                <div class="feature-card">
+                    <h3>🔓 协议透明可探测</h3>
+                    <p>原生通信协议包头固定、字段固定、流量特征稳定，攻击者可通过抓包快速梳理通信逻辑、业务字段、交互流程，存在协议被彻底破解、业务逻辑暴露的风险。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⚠️ 报文易篡改、易重放</h3>
+                    <p>现有通信缺乏标准化防篡改、防重放机制，传输报文可被中间人随意修改、重复投递，导致服务端产生异常业务逻辑、数据错乱、恶意请求触发风险。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔗 客户端与服务端防护割裂</h3>
+                    <p>传统模式下客户端防护、服务端校验分开开发，算法、校验规则、协议规则不统一，极易出现<strong>一端防护、一端裸奔</strong>的漏洞，整体通信链路存在安全短板。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💸 安全开发成本高、业务侵入性强</h3>
+                    <p>若业务自行开发全套加密、验签、防重放、协议混淆逻辑，需要大量重复编码，且深度耦合业务代码，后续安全策略升级、漏洞修复需要全业务迭代，维护成本极高。</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>核心解决思路</h2>
+                <p><strong>核心思想：一套SDK、两端集成、全链路防护、业务零侵入</strong></p>
+                <div class="benefits-list">
+                    <li><strong>统一两端安全标准</strong>：提供客户端SDK + 服务端SDK成对组件，两端采用完全统一的加密规则、校验规则、协议变形规则、会话安全机制</li>
+                    <li><strong>封装全套协议安全能力</strong>：将加密解密、签名验签、防重放、协议混淆、流量伪装、会话鉴权、异常拦截等复杂安全逻辑全部内置</li>
+                    <li><strong>业务极低侵入、快速接入</strong>：原有业务通信逻辑无需重构，仅替换原生收发接口为SDK标准接口</li>
+                    <li><strong>动态协议变形</strong>：通过动态包头、动态字段排序、字节混淆、随机编码变形，彻底消除固定协议特征</li>
+                    <li><strong>全链路可信校验</strong>：建立「握手鉴权+签名防篡改+时间戳+流水号+随机因子」多重校验体系</li>
+                    <li><strong>安全能力可配置、可迭代</strong>：支持防护等级开关、算法策略更新、拦截策略调整</li>
+                </div>
+            </section>
+
+            <section class="section effects-section">
+                <h2>预期实现效果</h2>
+                <div class="roles-grid">
+                    <article class="role-card">
+                        <h3>🔐 通信协议完全隐蔽</h3>
+                        <p>网络层无法抓包解析协议结构、无法识别业务字段、无法定位通信协议类型，彻底规避协议逆向与流量分析。</p>
+                    </article>
+                    <article class="role-card">
+                        <h3>🔑 传输数据全程可信加密</h3>
+                        <p>全链路密文传输，支持国密/国际双算法体系，报文篡改、伪造、替换全部可被精准识别并拦截。</p>
+                    </article>
+                    <article class="role-card">
+                        <h3>🛡️ 彻底抵御主流网络攻击</h3>
+                        <p>有效防御抓包分析、中间人篡改、重放攻击、协议扫描、端口探测、恶意伪造请求等常见攻击手段。</p>
+                    </article>
+                    <article class="role-card">
+                        <h3>⚡ 降低业务安全开发成本</h3>
+                        <p>业务无需自研任何通信安全逻辑，接入即拥有企业级协议防护能力，开发效率提升90%以上。</p>
+                    </article>
+                    <article class="role-card">
+                        <h3>📱 客户端SDK</h3>
+                        <p>负责报文加密、协议伪装、安全出站、会话发起</p>
+                    </article>
+                    <article class="role-card">
+                        <h3>🖥️ 服务端SDK</h3>
+                        <p>负责报文校验、非法拦截、解密还原、攻击统计、会话管理</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>技术架构（四层架构）</h2>
+                <div class="architecture-image">
+                    <img src="安全通信sdk.png" alt="端到端通信协议保护SDK架构图" />
+                </div>
+                <div class="feature-card">
+                    <h3>1️⃣ SDK对外接口层（业务接入层）</h3>
+                    <p>提供统一极简API，屏蔽所有底层复杂逻辑：SDK初始化、安全通道建立、安全发包收包、防护等级配置、日志配置、策略开关。<strong>特点：业务零感知、零复杂度、极简集成</strong></p>
+                </div>
+                <div class="feature-card">
+                    <h3>2️⃣ 安全策略编排层（能力管理层）</h3>
+                    <p>统一管理所有安全防护策略：加密算法策略(SM4/AES动态切换)、签名校验策略(SM3/SHA256)、防重放时效规则、协议混淆强度、流量伪装规则、异常拦截限流断连策略。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>3️⃣ 协议防护内核层（SDK核心）</h3>
+                    <p>实现所有端到端安全能力：安全握手与会话密钥协商、报文加解密内核、签名完整性校验、防重放防伪造校验引擎、动态协议变形流量混淆引擎、攻击识别与异常过滤。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>4️⃣ 底层网络适配层</h3>
+                    <p>兼容各类原生通信协议：TCP/UDP私有协议适配、HTTP/HTTPS/WebSocket通用协议适配、跨平台网络IO与会话管理。</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>核心功能模块</h2>
+
+                <div class="feature-card">
+                    <h3>🔒 安全通道</h3>
+                    <p><strong>接口绑定</strong>：建立接口白名单机制，接口调用权限分级管理，实时维护接口映射关系；<strong>应用绑定</strong>：客户端/服务端双向证书认证，应用身份标识签名验证；<strong>应用校验</strong>：请求来源合法性检测，访问频次限制与流量控制。</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔑 数据加密</h3>
+                    <p><strong>密钥协商</strong>：支持国密SM2/ECDH协议，每次会话独立生成临时会话密钥；<strong>接口标记</strong>：接口调用链路追踪，动态密钥刷新与重同步；<strong>地址混淆</strong>：真实通信地址隐藏伪装，多跳转发与动态路由，流量特征随机化处理。</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>✅ 环境校验</h3>
+                    <p><strong>静态参数约定</strong>：预共享密钥(PSK)校验，协议版本一致性验证，环境指纹采集与比对；<strong>幂等性校验</strong>：基于时间戳的请求时效性验证，流水号序列号唯一性校验，请求nonce随机数防重放机制。</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3>🔀 动态协议变形引擎</h3>
+                    <p>包头结构动态随机变化，报文字段顺序动态打乱，报文填充随机冗余字节，无固定协议指纹，无法被特征库识别，彻底消除固定协议特征，使流量无法被识别、归类、逆向解析。</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>版本规划路线图</h2>
+                <div class="timeline">
+                    <article class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="completed">V1.0 基础闭环版</h3>
+                                <p class="timeline-date">2026年4月 - 2026年9月</p>
+                                <span class="timeline-toggle-icon">▼</span>
+                            </div>
+                            <ul class="timeline-features">
+                                <li>服务端SDK核心架构</li>
+                                <li>SM4国密算法支持</li>
+                                <li>多种编码支持</li>
+                                <li>URL混淆解密</li>
+                                <li>防重放攻击机制</li>
+                                <li>应用标识校验</li>
+                                <li>多通道支持</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline-item in-progress">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="in-progress">V1.5 安全加固版</h3>
+                                <p class="timeline-date">2026年10月 - 2027年1月</p>
+                                <span class="timeline-toggle-icon">▼</span>
+                            </div>
+                            <ul class="timeline-features">
+                                <li>SM3/SHA256全局报文签名校验</li>
+                                <li>时间戳校验机制</li>
+                                <li>全局自增序列号</li>
+                                <li>安全握手鉴权</li>
+                                <li>基础风控拦截</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline-item not-started">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="not-started">V2.0 高级抗破解版</h3>
+                                <p class="timeline-date">2027年2月 - 2027年6月</p>
+                                <span class="timeline-toggle-icon">▼</span>
+                            </div>
+                            <ul class="timeline-features">
+                                <li>动态协议变形引擎</li>
+                                <li>流量混淆伪装</li>
+                                <li>动态会话密钥轮换</li>
+                                <li>数据包碎片化处理</li>
+                                <li>SDK自身防逆向保护</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline-item not-started">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="not-started">V3.0 企业成熟版</h3>
+                                <p class="timeline-date">2027年7月 - 2027年12月</p>
+                                <span class="timeline-toggle-icon">▼</span>
+                            </div>
+                            <ul class="timeline-features">
+                                <li>安全策略热更新</li>
+                                <li>集群服务端适配</li>
+                                <li>完整安全监控告警</li>
+                                <li>黑白名单设备级管控</li>
+                                <li>多平台完整适配</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>招募角色</h2>
+                <div class="roles-grid">
+                    <article class="role-card">
+                        <h3>后端开发工程师</h3>
+                        <p>负责服务端SDK核心架构设计与实现</p>
+                        <ul class="requirements-list">
+                            <li>熟悉Java/Spring Boot技术栈</li>
+                            <li>有网络安全或加密算法经验优先</li>
+                            <li>了解国密算法(SM2/SM3/SM4)</li>
+                            <li>具备良好的代码规范和架构思维</li>
+                        </ul>
+                    </article>
+
+                    <article class="role-card">
+                        <h3>移动端开发工程师</h3>
+                        <p>负责Android/iOS客户端SDK开发</p>
+                        <ul class="requirements-list">
+                            <li>精通Kotlin/Swift编程语言</li>
+                            <li>有加密通信或安全SDK开发经验</li>
+                            <li>了解JNI/NDK开发优先</li>
+                            <li>具备跨平台开发经验优先</li>
+                        </ul>
+                    </article>
+
+                    <article class="role-card">
+                        <h3>Web前端工程师</h3>
+                        <p>负责Web端SDK和管理后台开发</p>
+                        <ul class="requirements-list">
+                            <li>精通JavaScript/TypeScript</li>
+                            <li>熟悉Vue.js/React等前端框架</li>
+                            <li>有JS加密库开发经验优先</li>
+                            <li>了解WebAssembly优先</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>项目收益</h2>
+                <ul class="benefits-list">
+                    <li>🚀 参与前沿网络安全技术研发</li>
+                    <li>🏆 获得社区版产品署名权</li>
+                    <li>💰 优秀贡献者有机会获得商业化收益分成</li>
+                    <li>📚 积累高质量项目经验和作品集</li>
+                    <li>🤝 拓展行业人脉和技术视野</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>项目进度</h2>
+                <p>目前项目处于<strong>V1.0版本开发阶段</strong>，已完成技术方案设计和核心架构搭建。</p>
+
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 35%">V1.0 开发中 (35%)</div>
+                </div>
+
+                <p><strong>预计完成时间：</strong>2026年9月</p>
+            </section>
+
+            <section class="contact-info">
+                <h3>申请方式</h3>
+                <p>请将您的简历和相关作品发送至邮箱：<a href="mailto:coolxer@163.com" class="email-link">coolxer@163.com</a></p>
+                <p>邮件主题请注明：【通信安全SDK项目申请】+ 姓名 + 应聘岗位</p>
+                <p>我们将在收到申请后一周内与您联系</p>
+            </section>
+
+            <button class="apply-button" onclick="applyForProject()">立即申请</button>
+        </article>
+
+        <footer>
+            <p>© 2026 酷X众创社区. 保留所有权利.</p>
+        </footer>
+
+        <a href="../index.html" class="floating-home-btn" title="返回首页">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+    </div>
+
+    <script src="js/recruitment-sc.js"></script>
+</body>
+
+</html>
