@@ -90,6 +90,9 @@
 
             <section class="section">
                 <h2>技术架构</h2>
+                <div class="architecture-image">
+                    <img src="images/Vectum架构图.png" alt="Vectum架构图" />
+                </div>
                 <div class="feature-card">
                     <h3>1️⃣ 底层：实例运行层</h3>
                     <p>每个实例拥有独立文件隔离空间（配置、日志、脚本），通过命令行指令启动，支持多实例并行运行。</p>
@@ -127,16 +130,20 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3 class="completed">V1.0 基础版</h3>
+                                <h3 class="completed">V1.0 API接口版</h3>
                                 <p class="timeline-date">已完成</p>
                                 <span class="timeline-toggle-icon">▼</span>
                             </div>
                             <ul class="timeline-features">
-                                <li>多实例 Vector 管理</li>
-                                <li>RESTful API 能力</li>
-                                <li>可视化 Web UI</li>
-                                <li>任务启停控制</li>
-                                <li>日志查询</li>
+                                <li>创建任务：创建新的数据推送任务</li>
+                                <li>删除任务：根据 ID 删除单个任务</li>
+                                <li>批量删除：批量删除多个任务</li>
+                                <li>更新任务：根据 ID 更新任务信息</li>
+                                <li>批量更新：批量更新多个任务</li>
+                                <li>查询所有：获取所有任务列表</li>
+                                <li>查询详情：根据 ID 查询任务详情</li>
+                                <li>启停控制：切换任务运行状态</li>
+                                <li>获取日志：获取任务日志内容</li>
                             </ul>
                         </div>
                     </article>
@@ -144,15 +151,16 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3 class="in-progress">V1.5 MCP 增强版</h3>
+                                <h3 class="in-progress">V1.1 可视化操作版</h3>
                                 <p class="timeline-date">进行中</p>
                                 <span class="timeline-toggle-icon">▼</span>
                             </div>
                             <ul class="timeline-features">
-                                <li>MCP 协议完整支持</li>
-                                <li>AI 自然语言配置生成</li>
-                                <li>一键部署 AI 配置</li>
-                                <li>高级监控告警</li>
+                                <li>表格展示任务列表：包括任务名称、描述信息、任务配置、状态、进程、更新和创建时间等</li>
+                                <li>创建任务：表单提交，包含名称、描述、配置编辑器</li>
+                                <li>编辑任务：表单修改，支持修改所有字段</li>
+                                <li>启动/停止：根据状态显示启动/停止按钮，确认后操作</li>
+                                <li>可查看任务日志：分控制台日志和系统日志分别显示</li>
                             </ul>
                         </div>
                     </article>
@@ -160,15 +168,13 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3 class="not-started">V2.0 企业版</h3>
+                                <h3 class="not-started">V1.2 MCP服务版</h3>
                                 <p class="timeline-date">规划中</p>
                                 <span class="timeline-toggle-icon">▼</span>
                             </div>
                             <ul class="timeline-features">
-                                <li>集群管理支持</li>
-                                <li>高可用部署</li>
-                                <li>安全加固</li>
-                                <li>企业级权限管理</li>
+                                <li>基于API接口封装MCP服务</li>
+                                <li>支持对接AI Agent应用</li>
                             </ul>
                         </div>
                     </article>
@@ -179,35 +185,14 @@
                 <h2>招募角色</h2>
                 <div class="roles-grid">
                     <article class="role-card">
-                        <h3>后端开发工程师</h3>
-                        <p>负责 Vectum 核心功能设计与实现</p>
+                        <h3>全栈工程师</h3>
+                        <p>负责 Vectum 全栈开发，包括后端 API、前端可视化界面</p>
                         <ul class="requirements-list">
-                            <li>熟悉 Java/Spring Boot 技术栈</li>
+                            <li>熟悉 Java/Spring Boot 后端技术栈</li>
+                            <li>精通 JavaScript/TypeScript，熟悉 Vue.js/React 前端框架</li>
                             <li>有进程管理或服务编排经验优先</li>
                             <li>了解 Vector 数据管道优先</li>
                             <li>具备良好的代码规范和架构思维</li>
-                        </ul>
-                    </article>
-
-                    <article class="role-card">
-                        <h3>前端开发工程师</h3>
-                        <p>负责 Web UI 可视化界面开发</p>
-                        <ul class="requirements-list">
-                            <li>精通 JavaScript/TypeScript</li>
-                            <li>熟悉 Vue.js/React 等前端框架</li>
-                            <li>有数据可视化开发经验优先</li>
-                            <li>具备良好的用户体验设计意识</li>
-                        </ul>
-                    </article>
-
-                    <article class="role-card">
-                        <h3>DevOps 工程师</h3>
-                        <p>负责系统部署与自动化运维</p>
-                        <ul class="requirements-list">
-                            <li>熟悉 Docker/Kubernetes</li>
-                            <li>有 Vector 使用经验优先</li>
-                            <li>了解日志采集系统架构</li>
-                            <li>具备自动化运维实践经验</li>
                         </ul>
                     </article>
                 </div>
@@ -225,12 +210,14 @@
             </section>
 
             <section class="section">
-                <h2>服务访问</h2>
-                <div class="feature-card">
-                    <p><strong>API 服务</strong>：<code>http://&lt;ip&gt;:11002</code><br>
-                    <strong>Swagger 文档</strong>：<code>http://&lt;ip&gt;:11002/swagger-ui/index.html</code><br>
-                    <strong>MCP 接口</strong>：<code>http://&lt;ip&gt;:11002/sse</code></p>
+                <h2>项目进度</h2>
+                <p>目前项目处于<strong>V1.0版本开发阶段</strong>，已完成技术方案设计和核心架构搭建。</p>
+
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 35%">V1.0 开发中 (35%)</div>
                 </div>
+
+                <p><strong>预计完成时间：</strong>2026年9月</p>
             </section>
 
             <section class="contact-info">
