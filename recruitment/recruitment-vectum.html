@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vectum - 基于Vector的可视化数据管道管理工具 - 酷X众创社区">
+    <title>Vectum - 基于Vector的可视化数据管道管理工具 - 酷X众创社区</title>
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/recruitment.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Vectum</h1>
+            <p>基于 Vector 的可视化数据管道管理工具</p>
+            <div class="social-links">
+                    <a href="https://github.com/coolxer-studio/vectum" target="_blank" class="social-link github">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.844c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.161 22 16.44 22 12.017 22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://gitee.com/coolxer-studio/vectum" target="_blank" class="social-link gitee">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.164 6.839 9.489.5.09.682-.218.682-.487 0-.236-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.113-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .268.18.579.688.481C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                        </svg>
+                        Gitee
+                    </a>
+                </div>
+        </header>
+
+        <article class="project-detail-card">
+
+            <section class="section">
+                <h2>项目核心定位</h2>
+                <p><strong>Vectum</strong> 是一款基于 <strong>Vector</strong> 封装的轻量级数据管道管理工具，面向运维/DevOps 团队，提供<strong>可视化界面 + RESTful API + MCP 协议</strong>三位一体能力，用于统一管理、调度、监控多实例 Vector 数据采集任务，支持日志、指标、安全审计数据的全链路采集、转换与转发。</p>
+            </section>
+
+            <section class="section">
+                <h2>当前行业痛点</h2>
+                <div class="feature-card">
+                    <h3>🔧 纯命令行操作，运维门槛高</h3>
+                    <p>Vector 原生采用 YAML 配置文件和命令行操作方式，参数众多、语法复杂，运维人员需要记忆大量命令和配置规则，学习成本高、误操作风险大。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 多实例管理困难</h3>
+                    <p>当需要运行多个数据采集任务时，每个任务需要独立进程、独立配置，进程管理、资源分配、日志汇总都变得复杂，难以实现统一管控。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤖 配置编写成本高</h3>
+                    <p>Vector 的配置语法虽然强大但相对复杂，从零编写符合业务需求的配置需要深入理解各个组件的参数含义和组合方式。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📈 无统一监控与日志入口</h3>
+                    <p>原生 Vector 缺乏可视化的监控面板，无法直观查看任务运行状态、资源占用和日志输出，排查问题需要登录服务器手动查看。</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>核心解决思路</h2>
+                <p><strong>核心思想：一个平台、三位一体、多实例管理、零门槛运维</strong></p>
+                <div class="benefits-list">
+                    <li><strong>可视化操作界面</strong>：提供 Web UI 管理界面，通过表单和图形化操作替代命令行，业务人员也能轻松管理数据管道</li>
+                    <li><strong>多实例隔离运行</strong>：每个任务对应独立 Vector 进程，进程隔离、配置隔离、日志隔离，支持并行运行任意数量采集任务</li>
+                    <li><strong>RESTful API 标准化</strong>：提供完整的 HTTP API 接口，支持任务管理、启停控制、日志查询、状态监控，方便与现有系统集成</li>
+                    <li><strong>MCP 协议智能化</strong>：暴露标准 MCP 接口，支持 AI 智能体调用，通过自然语言即可生成 Vector 配置，降低配置门槛</li>
+                    <li><strong>统一监控告警</strong>：实时监控任务状态、资源占用、日志输出，支持告警通知，快速定位和解决问题</li>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>预期实现效果</h2>
+                <div class="roles-grid">
+                    <article class="role-card">
+                        <h3>🔗 标准化 API 集成</h3>
+                        <p>提供完整的 RESTful API，可与现有运维平台、监控系统、告警系统无缝集成，实现自动化运维。</p>
+                    </article>
+                    <article class="role-card">
+                        <h3>📊 实时可视化监控</h3>
+                        <p>统一监控面板实时查看任务状态、进程信息、资源占用，日志实时流查看，异常告警快速响应。</p>
+                    </article>
+                    <article class="role-card">
+                        <h3>🤖 AI 智能配置</h3>
+                        <p>通过 MCP 协议对接 AI 智能体，自然语言描述需求即可生成符合规范的 Vector 配置，一键部署上线。</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>技术架构</h2>
+                <div class="architecture-image">
+                    <img src="images/Vectum架构图.png" alt="Vectum架构图" />
+                </div>
+                <div class="feature-card">
+                    <h3>1️⃣ 底层：实例运行层</h3>
+                    <p>每个实例拥有独立文件隔离空间（配置、日志、脚本），通过命令行指令启动，支持多实例并行运行。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>2️⃣ 中间层：平台核心管理层</h3>
+                    <p><strong>工作空间管理</strong>：实例独立空间生命周期管理<br>
+                    <strong>命令行管理</strong>：封装底层命令行操作<br>
+                    <strong>调度管理</strong>：任务调度、资源分配、状态监控<br>
+                    <strong>RESTful API 封装</strong>：标准化 HTTP 接口</p>
+                </div>
+                <div class="feature-card">
+                    <h3>3️⃣ 上层：接入层</h3>
+                    <p><strong>业务系统对接</strong>：通过 API 集成<br>
+                    <strong>AI 智能体对接</strong>：通过 MCP 协议<br>
+                    <strong>可视化操作</strong>：Web UI 界面</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>技术栈</h2>
+                <div class="feature-card">
+                    <h3>🚀 技术选型</h3>
+                    <p><strong>语言</strong>：Java 17<br>
+                    <strong>框架</strong>：Spring Boot 3.2.0<br>
+                    <strong>API 文档</strong>：SpringDoc OpenAPI 2.3.0<br>
+                    <strong>MCP 协议</strong>： spring-boot-mcp-starter<br>
+                    <strong>前端页面</strong>：低代码平台 AMIS<br>
+                    <strong>数据管道</strong>：Vector 0.35+</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>版本规划路线图</h2>
+                <div class="timeline">
+                    <article class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="completed">V1.0 API接口版</h3>
+                                <p class="timeline-date">已完成</p>
+                                <span class="timeline-toggle-icon">▼</span>
+                            </div>
+                            <ul class="timeline-features">
+                                <li>创建任务：创建新的数据推送任务</li>
+                                <li>删除任务：根据 ID 删除单个任务</li>
+                                <li>批量删除：批量删除多个任务</li>
+                                <li>更新任务：根据 ID 更新任务信息</li>
+                                <li>批量更新：批量更新多个任务</li>
+                                <li>查询所有：获取所有任务列表</li>
+                                <li>查询详情：根据 ID 查询任务详情</li>
+                                <li>启停控制：切换任务运行状态</li>
+                                <li>获取日志：获取任务日志内容</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline-item in-progress">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="in-progress">V1.1 可视化操作版</h3>
+                                <p class="timeline-date">进行中</p>
+                                <span class="timeline-toggle-icon">▼</span>
+                            </div>
+                            <ul class="timeline-features">
+                                <li>表格展示任务列表：包括任务名称、描述信息、任务配置、状态、进程、更新和创建时间等</li>
+                                <li>创建任务：表单提交，包含名称、描述、配置编辑器</li>
+                                <li>编辑任务：表单修改，支持修改所有字段</li>
+                                <li>启动/停止：根据状态显示启动/停止按钮，确认后操作</li>
+                                <li>可查看任务日志：分控制台日志和系统日志分别显示</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="timeline-item not-started">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3 class="not-started">V1.2 MCP服务版</h3>
+                                <p class="timeline-date">规划中</p>
+                                <span class="timeline-toggle-icon">▼</span>
+                            </div>
+                            <ul class="timeline-features">
+                                <li>基于API接口封装MCP服务</li>
+                                <li>支持对接AI Agent应用</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>招募角色</h2>
+                <div class="roles-grid">
+                    <article class="role-card">
+                        <h3>全栈工程师</h3>
+                        <p>负责 Vectum 全栈开发，包括后端 API、前端可视化界面</p>
+                        <ul class="requirements-list">
+                            <li>熟悉 Java/Spring Boot 后端技术栈</li>
+                            <li>精通 JavaScript/TypeScript，熟悉 Vue.js/React 前端框架</li>
+                            <li>有进程管理或服务编排经验优先</li>
+                            <li>了解 Vector 数据管道优先</li>
+                            <li>具备良好的代码规范和架构思维</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>项目收益</h2>
+                <ul class="benefits-list">
+                    <li>🚀 参与前沿数据管道技术研发</li>
+                    <li>🏆 获得社区版产品署名权</li>
+                    <li>💰 优秀贡献者有机会获得商业化收益分成</li>
+                    <li>📚 积累高质量项目经验和作品集</li>
+                    <li>🤝 拓展行业人脉和技术视野</li>
+                </ul>
+            </section>
+
+            <section class="section">
+                <h2>项目进度</h2>
+                <p>目前项目处于<strong>V1.0版本开发阶段</strong>，已完成技术方案设计和核心架构搭建。</p>
+
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 35%">V1.0 开发中 (35%)</div>
+                </div>
+
+                <p><strong>预计完成时间：</strong>2026年9月</p>
+            </section>
+
+            <section class="contact-info">
+                <h3>申请方式</h3>
+                <p>请将您的简历和相关作品发送至邮箱：<a href="mailto:coolxer@163.com" class="email-link">coolxer@163.com</a></p>
+                <p>邮件主题请注明：【Vectum项目申请】+ 姓名 + 应聘岗位</p>
+                <p>我们将在收到申请后一周内与您联系</p>
+            </section>
+
+            <button class="apply-button" onclick="applyForProject()">立即申请</button>
+        </article>
+
+        <footer>
+            <p>© 2026 酷X众创社区. 保留所有权利.</p>
+        </footer>
+
+        <a href="../index.html" class="floating-home-btn" title="返回首页">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+    </div>
+
+    <script src="js/recruitment-sc.js"></script>
+</body>
+
+</html>
